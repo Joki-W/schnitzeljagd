@@ -3,10 +3,22 @@
 <head>
     <title>Schnitzeljagd</title>
     <script>
-        function checkCode() {
+        // Funktion zum Hashen des Passworts
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function checkCode() {
             const code = document.getElementById("codeInput").value;
-            const correctCode = "test"; // Das richtige Codewort
-            if (code === correctCode) {
+            const correctHash = "96e7e67a62f50558d3b414487da28e6276333f94f6499b7c3d7807438d1dd88c"; 
+
+            // Eingabe hashen und vergleichen
+            const codeHash = await hashPassword(code);
+            if (codeHash === correctHash) {
                 document.getElementById("hint").innerHTML = "Nächster Hinweis: Folge dem Pfad zur alten Eiche!";
             } else {
                 alert("Falsches Codewort. Versuche es erneut!");
