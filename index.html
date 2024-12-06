@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Schnitzeljagd</title>
+    <title>3.Rätsel</title>
     <script>
         // Funktion zum Hashen des Passworts
         async function hashPassword(password) {
@@ -14,21 +14,57 @@
 
         async function checkCode() {
             const code = document.getElementById("codeInput").value;
-            const correctHash = "96e7e67a62f50558d3b414487da28e6276333f94f6499b7c3d7807438d1dd88c"; 
+            const correctHash = "96e7e67a62f50558d3b414487da28e6276333f94f6499b7c3d7807438d1dd88c";
 
             // Eingabe hashen und vergleichen
             const codeHash = await hashPassword(code);
-            if (codeHash === correctHash) {
-                document.getElementById("hint").innerHTML = "Nächster Hinweis: Folge dem Pfad zur alten Eiche!";
-            } else {
-                alert("Falsches Codewort. Versuche es erneut!");
+            if (codeHash === correctHash) { //ganz so einfach mache ich es dir nicht. Das Codewort musst du schon finden
+                document.getElementById("hint").innerHTML = "Rätsel Nummer 4:\nDer Text unten ist verschlüsselt.\nHier mache ich es dir aber nicht so schwer\nDu kannst diesen Text mithilfe des Codewortes von dieser Seite unter folgenden Link entschlüsseln: \nhttps://www.boxentriq.com/code-breaking/vigenere-cipher\nWdm sdma gadia Ulbzkvinodk bün yda Lgewe\n" +
+                    "Yp kzmkop yda Rcgzli pny hzd wpxd\n" +
+                    "Vmlgkjhmzmb Deibwbc int rjrvm fyd dhiep dznfz\n" +
+                    "Dp abgkhhot ban vji kzhkai vizepei Kzml\n" +
+                    "Dbe segg zip npr nvgzm tea dxd füflz\n" +
+                    "Mpns yho oexcarjixh qzrnsäkzhdxd myccei:\n" +
+                    "\n" +
+                    "Dcc vbnzz. yecf nde vpfbdyaj\n" +
+                    "Dxd wcrye ydcc mfaivgo hälgzn gvsndk\n" +
+                    "Eyc rarbe iixct cdoqigvqfcn pny yixg sangvoscn\n" +
+                    "Dcc remcb zexc jic zpm Rziidk xndicel\n" +
+                    "Ixh rzryd keahvhs Jewerjhg yr zem nwgcn\n" +
+                    "Dcc remcb zem ieekags zdnz fokßa Güba epzäclzi uic aeyc yecf vzrgztudk\n" +
+                    "\n" +
+                    "Sem fanlei uin sxglj oj gwnee/\n" +
+                    "Yedi kmzkgan Carx hvt ndcc fboacip, azem\n" +
+                    "dp wins wq oxcüyhremn ph en yr owbzj\n" +
+                    "Ilnznymii vfoozi sip bziyz, wvr eeam jxel vjrbzho\n" +
+                    "Vfn gzijel dvs lpälzmaa Okdal sny wdm wzqaaj zn emkem skdegdk\n" +
+                    "qjy ranl dp mdxh aqxcoo, ree gcc mdxh aügia\n" +
+                    "zvij epzäcl hdr ihzdp, yp xiqt uu wgiic, ri an uq schzn:\n" +
+                    "\n" +
+                    "Dxh rdoza ydyh liz apagzabj\n" +
+                    "Exc sepdz ddxh ihbiwgn däneei lvnszm\n" +
+                    "Fyd rzndc ndcco hzqrihvpbel uid ydcc ubnhvnoel\n" +
+                    "Ixh rzryd aeyc iee xuh uipnodoxnjxdelei Wzdnzm yneiban\n" +
+                    "Gcc wzmdz mfaivgo Lcbzwjcl ut aen nvcel\n" +
+                    "Ixh rzryd aen idamyln edie Güfb anuächel uid ydcc vxdncvbtgg qemgeoybj\n" +
+                    "\n" +
+                    "Kjc, ziah vuabewdk\n" +
+                    "Kkc, yecf apfbzbzm\n" +
+                    "Lkd\n" +
+                    "Dxd wcrye ydcc mfaivgo, iah remye yhzd jdziajs\n" +
+                    "vuabewdk\n" +
+                    "Kkc\n" +
+                    "Dyh uemdz yixg keahvhs, gcc wzmdz cfyd idamyln\n" +
+                    "apagzabj\n";
+            } else { // zusätzlicher Tipp für das Codewort weil du das hier gefunden hast: Hexadezimal
+                alert("Falsches Codewort. Versuche es erneut! \nTipp: Nutze den Hinweis des Rätsels");
             }
         }
     </script>
 </head>
 <body>
-<h1>Schnitzeljagd</h1>
-<p>Gib das Codewort ein, um den nächsten Hinweis zu erhalten:</p>
+<h1>3.Rätsel</h1>
+<p>Gib das Codewort ein, um zum 4.Rätsel zu gelangen:</p>
 <input type="text" id="codeInput" />
 <button onclick="checkCode()">Prüfen</button>
 <p id="hint"></p>
