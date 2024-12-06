@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schnitzeljagd</title>
+    <script>
+        function checkCode() {
+            const code = document.getElementById("codeInput").value;
+            const correctCode = "test"; // Das richtige Codewort
+            if (code === correctCode) {
+                document.getElementById("hint").innerHTML = "Nächster Hinweis: Folge dem Pfad zur alten Eiche!";
+            } else {
+                alert("Falsches Codewort. Versuche es erneut!");
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Schnitzeljagd</h1>
+<p>Gib das Codewort ein, um den nächsten Hinweis zu erhalten:</p>
+<input type="text" id="codeInput" />
+<button onclick="checkCode()">Prüfen</button>
+<p id="hint"></p>
+</body>
+</html>
